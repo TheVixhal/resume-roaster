@@ -9,9 +9,9 @@ search_tool = DuckDuckGoSearchRun()
 
 load_dotenv()
 
-key = "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"
+key = os.getenv("GROQ_API_KEY")
 
-llm = ChatGroq(model="gemma2-9b-it", verbose=True, temperature=0.7, key)
+llm = ChatGroq(model="gemma2-9b-it", verbose=True, temperature=0.7, groq_api_key=key)
 
 def streamlit_callback(step_output):
     st.markdown("---")
